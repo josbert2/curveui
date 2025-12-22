@@ -10,7 +10,7 @@ import { notFound } from "next/navigation";
 import { DocsCopyPage } from "@/components/docs-copy-page";
 import { DocsTableOfContents } from "@/components/docs-toc";
 import { SiteFooter } from "@/components/site-footer";
-import { source } from "@/lib/source";
+import { reactSource } from "@/lib/source";
 import { mdxComponents } from "@/mdx-components";
 import { Button } from "@/registry/default/ui/button";
 
@@ -19,14 +19,14 @@ export const dynamic = "force-static";
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return source.generateParams();
+  return reactSource.generateParams();
 }
 
 export async function generateMetadata(props: {
   params: Promise<{ slug?: string[] }>;
 }) {
   const params = await props.params;
-  const page = source.getPage(params.slug);
+  const page = reactSource.getPage(params.slug);
 
   if (!page) {
     notFound();
@@ -40,7 +40,7 @@ export async function generateMetadata(props: {
 
   return {
     description: doc.description,
-    title: `${doc.title} - coss ui`,
+    title: `${doc.title} - coss ui (React)`,
   };
 }
 
@@ -48,7 +48,7 @@ export default async function Page(props: {
   params: Promise<{ slug?: string[] }>;
 }) {
   const params = await props.params;
-  const page = source.getPage(params.slug);
+  const page = reactSource.getPage(params.slug);
   if (!page) {
     notFound();
   }
@@ -56,7 +56,7 @@ export default async function Page(props: {
   const doc = page.data;
   const rawContent = await page.data.getText("raw");
   const MDX = doc.body;
-  const neighbours = await findNeighbour(source.pageTree, page.url);
+  const neighbours = await findNeighbour(reactSource.pageTree, page.url);
 
   const links = doc.links;
 

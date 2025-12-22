@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { PAGES_NEW } from "@/lib/docs";
-import type { source } from "@/lib/source";
+import type { reactSource } from "@/lib/source";
 import { Badge } from "@/registry/default/ui/badge";
 import {
   Sidebar,
@@ -17,10 +17,51 @@ import {
   SidebarMenuItem,
 } from "@/registry/default/ui/sidebar";
 
+type Framework = "react" | "html";
+
+function FrameworkSwitcher({ current }: { current: Framework }) {
+  const pathname = usePathname();
+  
+  // Extract the path after /docs/{framework}/ to maintain position when switching
+  const getPathForFramework = (framework: Framework) => {
+    const currentPath = pathname.replace(/^\/docs\/(react|html)/, "");
+    return `/docs/${framework}${currentPath || ""}`;
+  };
+
+  return (
+    <div className="flex gap-1 rounded-lg bg-muted/50 p-1">
+      <Link
+        href={getPathForFramework("react")}
+        className={`flex-1 rounded-md px-3 py-1.5 text-center text-xs font-medium transition-colors ${
+          current === "react"
+            ? "bg-background text-foreground shadow-sm"
+            : "text-muted-foreground hover:text-foreground"
+        }`}
+      >
+        React
+      </Link>
+      <Link
+        href={getPathForFramework("html")}
+        className={`flex-1 rounded-md px-3 py-1.5 text-center text-xs font-medium transition-colors ${
+          current === "html"
+            ? "bg-background text-foreground shadow-sm"
+            : "text-muted-foreground hover:text-foreground"
+        }`}
+      >
+        HTML
+      </Link>
+    </div>
+  );
+}
+
 export function DocsSidebar({
   tree,
+  framework = "react",
   ...props
-}: React.ComponentProps<typeof Sidebar> & { tree: typeof source.pageTree }) {
+}: React.ComponentProps<typeof Sidebar> & { 
+  tree: typeof reactSource.pageTree;
+  framework?: Framework;
+}) {
   const pathname = usePathname();
 
   return (
@@ -31,6 +72,9 @@ export function DocsSidebar({
     >
       <SidebarContent className="no-scrollbar px-4 py-2">
         <div className="h-(--top-spacing) shrink-0" />
+        <div className="mb-4">
+          <FrameworkSwitcher current={framework} />
+        </div>
         {tree.children.map((item) => (
           <SidebarGroup className="gap-1" key={item.$id}>
             <SidebarGroupLabel className="h-7 px-0 text-sidebar-accent-foreground">
@@ -66,3 +110,4 @@ export function DocsSidebar({
     </Sidebar>
   );
 }
+

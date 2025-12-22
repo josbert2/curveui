@@ -22,7 +22,7 @@ import {
 import { useConfig } from "@/hooks/use-config";
 import { useIsMac } from "@/hooks/use-is-mac";
 import { useMutationObserver } from "@/hooks/use-mutation-observer";
-import type { source } from "@/lib/source";
+import type { reactSource } from "@/lib/source";
 import { cn } from "@/lib/utils";
 import { useCopyToClipboard } from "@/registry/default/hooks/use-copy-to-clipboard";
 import { Button } from "@/registry/default/ui/button";
@@ -41,7 +41,7 @@ export function CommandMenu({
   navItems,
   ...props
 }: ComponentProps<typeof Dialog> & {
-  tree: typeof source.pageTree;
+  tree: typeof reactSource.pageTree;
   navItems?: { href: string; label: string }[];
 }) {
   const router = useRouter();

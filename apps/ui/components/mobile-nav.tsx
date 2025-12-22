@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import * as React from "react";
 
 import { PAGES_NEW } from "@/lib/docs";
-import type { source } from "@/lib/source";
+import type { reactSource } from "@/lib/source";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/registry/default/ui/badge";
 import { Button } from "@/registry/default/ui/button";
@@ -18,7 +18,7 @@ export function MobileNav({
   items,
   className,
 }: {
-  tree: typeof source.pageTree;
+  tree: typeof reactSource.pageTree;
   items: { href: string; label: string }[];
   className?: string;
 }) {

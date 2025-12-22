@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { Cal_Sans as FontHeading, Inter as FontSans } from "next/font/google";
 
 import { SiteHeader } from "@/components/site-header";
+import { ThemeEditor } from "@/components/ThemeEditor";
 import {
   AnchoredToastProvider,
   ToastProvider,
@@ -57,6 +58,7 @@ export default function RootLayout({
             </AnchoredToastProvider>
           </ToastProvider>
         </ThemeProvider>
+        <ThemeEditor />
       </body>
     </html>
   );

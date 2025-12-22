@@ -10,6 +10,7 @@ import { CodeCollapsibleWrapper } from "@/components/code-collapsible-wrapper";
 import { CodeTabs } from "@/components/code-tabs";
 import { ComponentPreview } from "@/components/component-preview";
 import { ComponentSource } from "@/components/component-source";
+import { HtmlPreview } from "@/components/html-preview";
 import { cn } from "@/lib/utils";
 import {
   Accordion,
@@ -58,6 +59,7 @@ export const mdxComponents = {
   CodeTabs,
   ComponentPreview,
   ComponentSource,
+  HtmlPreview,
   code: ({
     className,
     __raw__,

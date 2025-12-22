@@ -28,16 +28,25 @@ export default defineConfig({
   },
 });
 
-export const docs = defineDocs({
-  dir: "content/docs",
+const docsSchema = frontmatterSchema.extend({
+  links: z
+    .object({
+      api: z.string().optional(),
+      doc: z.string().optional(),
+    })
+    .optional(),
+});
+
+export const reactDocs = defineDocs({
+  dir: "content/docs/react",
   docs: {
-    schema: frontmatterSchema.extend({
-      links: z
-        .object({
-          api: z.string().optional(),
-          doc: z.string().optional(),
-        })
-        .optional(),
-    }),
+    schema: docsSchema,
+  },
+});
+
+export const htmlDocs = defineDocs({
+  dir: "content/docs/html",
+  docs: {
+    schema: docsSchema,
   },
 });

@@ -1,5 +1,5 @@
 {
-  "name": "flyonui",
+  "name": "@coss/flyonui",
   "version": "2.4.1",
   "type": "module",
   "description": "The easiest, free and open-source Tailwind CSS component library with semantic classes.",
@@ -66,6 +66,19 @@
   ],
   "main": "./index.js",
   "browser": "./flyonui.css",
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "require": "./index.js",
+      "default": "./index.js"
+    },
+    "./flyonui.js": "./flyonui.js",
+    "./flyonui.css": "./flyonui.css",
+    "./variants.css": "./variants.css",
+    "./themes.css": "./themes.css",
+    "./chunks.css": "./chunks.css",
+    "./*": "./*"
+  },
   "files": [
     "base",
     "colors",
@@ -102,6 +115,8 @@
   "scripts": {
     "watch:js": "webpack --config webpack.config.cjs --watch",
     "watch:mjs": "webpack --config webpack.config.mjs.cjs --watch",
+    "watch:css": "bun watch.js",
+    "watch:src": "bun watch-src.js",
     "build:css": "bun build.js",
     "build:js": "webpack --config webpack.config.cjs",
     "build:mjs": "webpack --config webpack.config.mjs.cjs",

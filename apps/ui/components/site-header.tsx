@@ -5,10 +5,10 @@ import { CommandMenu } from "@/components/command-menu";
 import { MainNav } from "@/components/main-nav";
 import { MobileNav } from "@/components/mobile-nav";
 import { appConfig } from "@/lib/config";
-import { source } from "@/lib/source";
+import { reactSource } from "@/lib/source";
 
 export function SiteHeader() {
-  const pageTree = source.pageTree;
+  const pageTree = reactSource.pageTree;
 
   return (
     <WorkspaceSiteHeader

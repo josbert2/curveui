@@ -5,6 +5,7 @@ const withMDX = createMDX();
 
 const nextConfig: NextConfig = {
   basePath: process.env.NEXT_PUBLIC_BASE_PATH || "/ui",
+  
   async redirects() {
     return [
       {
@@ -22,7 +23,7 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-  transpilePackages: ["@coss/ui"],
+  transpilePackages: ["@coss/ui", "@coss/flyonui"],
 };
 
 export default withMDX(nextConfig);
