@@ -1,7 +1,7 @@
 export default {
   name: "button-ghost",
   description: "Ghost button",
-  html: `<button class="flyo-btn flyo-btn-ghost">
+  html: `<button class="btn btn-ghost">
   Ghost
 </button>`,
 };

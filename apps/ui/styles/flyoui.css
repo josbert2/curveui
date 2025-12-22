@@ -5,26 +5,26 @@
 /*@import "@coss/flyonui/flyonui.css"; */
 
 @theme  {
-    --color-base-100: oklch(97% 0.0035 67.78);
-  --color-base-200: oklch(95% 0.0081 61.42);
-  --color-base-300: oklch(90% 0.0081 61.42);
-  --color-base-content: oklch(40% 0.0081 61.42);
-  --color-primary: oklch(23.27% 0.0249 284.3);
-  --color-primary-content: oklch(94.22% 0.2505 117.44);
-  --color-secondary: oklch(23.27% 0.0249 284.3);
-  --color-secondary-content: oklch(73.92% 0.2135 50.94);
-  --color-accent: oklch(23.27% 0.0249 284.3);
-  --color-accent-content: oklch(88.92% 0.2061 189.9);
-  --color-neutral: oklch(20% 0 0);
-  --color-neutral-content: oklch(80% 0.0081 61.42);
-  --color-info: oklch(80.39% 0.1148 241.68);
-  --color-info-content: oklch(30.39% 0.1148 241.68);
-  --color-success: oklch(83.92% 0.0901 136.87);
-  --color-success-content: oklch(23.92% 0.0901 136.87);
-  --color-warning: oklch(83.92% 0.1085 80);
-  --color-warning-content: oklch(43.92% 0.1085 80);
-  --color-error: oklch(75.1% 0.1814 22.37);
-  --color-error-content: oklch(35.1% 0.1814 22.37);
+  --color-base-100: oklch(99.43% 0.001 286.38);
+  --color-base-200: oklch(97.33% 0.008 271.33);
+  --color-base-300: oklch(48.52% 0.0225 279.09);
+  --color-base-content: oklch(42.06% 0.049 276.53);
+  --color-primary: oklch(62.31% 0.188 259.81);
+  --color-primary-content: oklch(97.05% 0.014 254.6);
+  --color-secondary: oklch(55.79% 0.022 301.91);
+  --color-secondary-content: oklch(95.05% 0.003 308.43);
+  --color-accent: oklch(65.59% 0.212 354.31);
+  --color-accent-content: oklch(97.14% 0.014 343.2);
+  --color-neutral: oklch(0.447 0.0732 274.26);
+  --color-neutral-content: oklch(82.15% 0.055 277.12);
+  --color-info: oklch(70.38% 0.123 182.5);
+  --color-info-content: oklch(98.36% 0.014 180.72);
+  --color-success: oklch(76.81% 0.204 130.85);
+  --color-success-content: oklch(98.57% 0.031 120.76);
+  --color-warning: oklch(79.52% 0.162 86.05);
+  --color-warning-content: oklch(98.73% 0.026 102.21);
+  --color-error: oklch(64.5% 0.215 16.44);
+  --color-error-content: oklch(96.94% 0.015 12.42);
   --radius-selector: 1rem;
   --radius-field: 1rem;
   --radius-box: 1rem;
@@ -50,10 +50,8 @@
 @theme inline {
   --color-background: var(--flyo-background);
   --color-foreground: var(--flyo-foreground);
-  --color-primary: var(--flyo-primary);
-  --color-primary-foreground: var(--flyo-primary-foreground);
-  --color-secondary: var(--flyo-secondary);
-  --color-secondary-foreground: var(--flyo-secondary-foreground);
+
+  
   --color-muted: var(--flyo-muted);
   --color-muted-foreground: var(--flyo-muted-foreground);
   --color-accent: var(--flyo-accent);
@@ -84,10 +82,7 @@
   --flyo-card-foreground: var(--color-zinc-900);
   --flyo-popover: var(--color-white);
   --flyo-popover-foreground: var(--color-zinc-900);
-  --flyo-primary: var(--color-zinc-800);
-  --flyo-primary-foreground: var(--color-zinc-50);
-  --flyo-secondary: --alpha(var(--color-black) / 4%);
-  --flyo-secondary-foreground: var(--color-zinc-900);
+  
   --flyo-muted: --alpha(var(--color-black) / 4%);
   --flyo-muted-foreground: var(--color-zinc-600);
   --flyo-accent: --alpha(var(--color-black) / 4%);
@@ -106,10 +101,7 @@
   --flyo-card-foreground: var(--color-zinc-100);
   --flyo-popover: var(--color-zinc-900);
   --flyo-popover-foreground: var(--color-zinc-100);
-  --flyo-primary: var(--color-zinc-100);
-  --flyo-primary-foreground: var(--color-zinc-900);
-  --flyo-secondary: --alpha(var(--color-white) / 6%);
-  --flyo-secondary-foreground: var(--color-zinc-100);
+  
   --flyo-muted: --alpha(var(--color-white) / 6%);
   --flyo-muted-foreground: var(--color-zinc-400);
   --flyo-accent: --alpha(var(--color-white) / 6%);
@@ -134,145 +126,8 @@
 @layer components {
   /* Scope for flyoui components */
   .flyoui-scope {
-    /* Button base */
-    .flyo-btn {
-      @apply inline-flex items-center justify-center gap-2;
-      @apply whitespace-nowrap rounded-lg text-sm font-medium;
-      @apply h-9 px-4 py-2;
-      @apply border border-transparent;
-      @apply cursor-pointer transition-colors;
-      @apply bg-primary text-primary-foreground;
-      @apply hover:bg-primary/90;
-      @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
-      @apply disabled:pointer-events-none disabled:opacity-50;
-    }
-
-    /* Variants */
-    .flyo-btn-primary {
-      @apply bg-primary text-primary-foreground hover:bg-primary/90;
-    }
-
-    .flyo-btn-secondary {
-      @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
-    }
-
-    .flyo-btn-outline {
-      @apply border-input bg-background hover:bg-accent hover:text-accent-foreground;
-    }
-
-    .flyo-btn-ghost {
-      @apply bg-transparent hover:bg-accent hover:text-accent-foreground;
-    }
-
-    .flyo-btn-destructive {
-      @apply bg-destructive text-destructive-foreground hover:bg-destructive/90;
-    }
-
-    .flyo-btn-link {
-      @apply text-primary underline-offset-4 hover:underline bg-transparent;
-    }
-
-    /* Sizes */
-    .flyo-btn-sm {
-      @apply h-8 rounded-md px-3 text-xs;
-    }
-
-    .flyo-btn-lg {
-      @apply h-10 rounded-md px-8;
-    }
-
-    .flyo-btn-icon {
-      @apply h-9 w-9 p-0;
-    }
-
-    /* Input */
-    .flyo-input {
-      @apply flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm;
-      @apply transition-colors;
-      @apply file:border-0 file:bg-transparent file:text-sm file:font-medium;
-      @apply placeholder:text-muted-foreground;
-      @apply focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring;
-      @apply disabled:cursor-not-allowed disabled:opacity-50;
-    }
-
-    /* Label */
-    .flyo-label {
-      @apply text-sm font-medium leading-none;
-      @apply peer-disabled:cursor-not-allowed peer-disabled:opacity-70;
-    }
-
-    /* Card */
-    .flyo-card {
-      @apply rounded-xl border bg-card text-card-foreground shadow;
-    }
-
-    .flyo-card-header {
-      @apply flex flex-col space-y-1.5 p-6;
-    }
-
-    .flyo-card-title {
-      @apply font-semibold leading-none tracking-tight;
-    }
-
-    .flyo-card-description {
-      @apply text-sm text-muted-foreground;
-    }
-
-    .flyo-card-content {
-      @apply p-6 pt-0;
-    }
-
-    .flyo-card-footer {
-      @apply flex items-center p-6 pt-0;
-    }
-
-    /* Badge */
-    .flyo-badge {
-      @apply inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold;
-      @apply transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
-    }
-
-    .flyo-badge-default {
-      @apply border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80;
-    }
-
-    .flyo-badge-secondary {
-      @apply border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80;
-    }
-
-    .flyo-badge-destructive {
-      @apply border-transparent bg-destructive text-destructive-foreground shadow hover:bg-destructive/80;
-    }
-
-    .flyo-badge-outline {
-      @apply text-foreground;
-    }
-
-    /* Alert */
-    .flyo-alert {
-      @apply relative w-full rounded-lg border px-4 py-3 text-sm;
-    }
-
-    .flyo-alert-title {
-      @apply mb-1 font-medium leading-none tracking-tight;
-    }
-
-    .flyo-alert-description {
-      @apply text-sm;
-    }
-
-    /* Separator */
-    .flyo-separator {
-      @apply shrink-0 bg-border;
-    }
-
-    .flyo-separator-horizontal {
-      @apply h-px w-full;
-    }
-
-    .flyo-separator-vertical {
-      @apply h-full w-px;
-    }
+   
+   
   }
 }
 
