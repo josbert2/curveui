@@ -17,9 +17,11 @@ import buttonDestructive from "./button/button-destructive";
 import buttonSm from "./button/button-sm";
 import buttonLg from "./button/button-lg";
 import buttonDisabled from "./button/button-disabled";
+import buttonColors from "./button/button-colors";
 
 export const HtmlIndex: Record<string, HtmlExample> = {
   // Button examples
+  [buttonColors.name]: buttonColors,
   [buttonDefault.name]: buttonDefault,
   [buttonPrimary.name]: buttonPrimary,
   [buttonSecondary.name]: buttonSecondary,

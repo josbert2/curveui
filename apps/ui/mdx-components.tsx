@@ -163,7 +163,7 @@ export const mdxComponents = {
         id={id}
       >
         <a
-          className="no-underline underline-offset-4 hover:underline"
+          className="no-underline underline-offset-4 hover:underline text-base-content font-Avenir"
           href={`#${id}`}
         >
           {children}

@@ -11,10 +11,10 @@
   --color-base-content: oklch(42.06% 0.049 276.53);
   --color-primary: oklch(62.31% 0.188 259.81);
   --color-primary-content: oklch(97.05% 0.014 254.6);
-  --color-secondary: oklch(55.79% 0.022 301.91);
-  --color-secondary-content: oklch(95.05% 0.003 308.43);
-  --color-accent: oklch(65.59% 0.212 354.31);
-  --color-accent-content: oklch(97.14% 0.014 343.2);
+  --color-secondary:oklch(76.662% .135 153.45);
+  --color-secondary-content: oklch(33.387% .04 162.24);
+  --color-accent: oklch(72.772% .149 33.2);
+  --color-accent-content: oklch(0% 0 0);
   --color-neutral: oklch(0.447 0.0732 274.26);
   --color-neutral-content: oklch(82.15% 0.055 277.12);
   --color-info: oklch(70.38% 0.123 182.5);
@@ -26,7 +26,7 @@
   --color-error: oklch(64.5% 0.215 16.44);
   --color-error-content: oklch(96.94% 0.015 12.42);
   --radius-selector: 1rem;
-  --radius-field: 6px;
+  --radius-field: 12px;
   --radius-box: 1rem;
   --size-selector: 0.25rem;
   --size-field: 0.25rem;
@@ -54,10 +54,7 @@
   
   --color-muted: var(--flyo-muted);
   --color-muted-foreground: var(--flyo-muted-foreground);
-  --color-accent: var(--flyo-accent);
-  --color-accent-foreground: var(--flyo-accent-foreground);
-  --color-destructive: var(--flyo-destructive);
-  --color-destructive-foreground: var(--flyo-destructive-foreground);
+
   --color-border: var(--flyo-border);
   --color-input: var(--flyo-input);
   --color-ring: var(--flyo-ring);
@@ -85,10 +82,7 @@
   
   --flyo-muted: --alpha(var(--color-black) / 4%);
   --flyo-muted-foreground: var(--color-zinc-600);
-  --flyo-accent: --alpha(var(--color-black) / 4%);
-  --flyo-accent-foreground: var(--color-zinc-900);
-  --flyo-destructive: var(--color-red-500);
-  --flyo-destructive-foreground: var(--color-red-700);
+ 
   --flyo-border: --alpha(var(--color-black) / 12%);
   --flyo-input: --alpha(var(--color-black) / 12%);
   --flyo-ring: var(--color-zinc-400);
@@ -104,10 +98,7 @@
   
   --flyo-muted: --alpha(var(--color-white) / 6%);
   --flyo-muted-foreground: var(--color-zinc-400);
-  --flyo-accent: --alpha(var(--color-white) / 6%);
-  --flyo-accent-foreground: var(--color-zinc-100);
-  --flyo-destructive: var(--color-red-500);
-  --flyo-destructive-foreground: var(--color-red-400);
+ 
   --flyo-border: --alpha(var(--color-white) / 12%);
   --flyo-input: --alpha(var(--color-white) / 12%);
   --flyo-ring: var(--color-zinc-500);
@@ -141,4 +132,26 @@
     position: absolute;
     inset: -7px;
     z-index: 9999;
+}
+
+
+.flyoui-scope{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 19px;
+}
+
+body, html {
+  font-family: 'pangram';
+  font-weight: 400;
+}
+
+.font-Avenir{
+  font-family: 'Avenir', sans-serif !important;
+}
+
+.box-shadow-ln{
+      --tw-shadow: 0 1px 1px 0.5px rgba(51, 51, 51, .04), 0 3px 3px -1.5px rgba(51, 51, 51, .02), 0 6px 6px -3px rgba(51, 51, 51, .04), 0 12px 12px -6px rgba(51, 51, 51, .04), 0 24px 24px -12px rgba(51, 51, 51, .04), 0 48px 48px -24px rgba(51, 51, 51, .04), 0 0 0 1px rgba(51, 51, 51, .1), inset 0 -1px 1px -0.5px rgba(51, 51, 51, .06);
+    --tw-shadow-colored: 0 1px 1px 0.5px var(--tw-shadow-color), 0 3px 3px -1.5px var(--tw-shadow-color), 0 6px 6px -3px var(--tw-shadow-color), 0 12px 12px -6px var(--tw-shadow-color), 0 24px 24px -12px var(--tw-shadow-color), 0 48px 48px -24px var(--tw-shadow-color), 0 0 0 1px var(--tw-shadow-color), inset 0 -1px 1px -0.5px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
