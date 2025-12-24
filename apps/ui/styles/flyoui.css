@@ -155,3 +155,21 @@ body, html {
     --tw-shadow-colored: 0 1px 1px 0.5px var(--tw-shadow-color), 0 3px 3px -1.5px var(--tw-shadow-color), 0 6px 6px -3px var(--tw-shadow-color), 0 12px 12px -6px var(--tw-shadow-color), 0 24px 24px -12px var(--tw-shadow-color), 0 48px 48px -24px var(--tw-shadow-color), 0 0 0 1px var(--tw-shadow-color), inset 0 -1px 1px -0.5px var(--tw-shadow-color);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
+
+.data-pressed\:bg-accent[data-pressed]{
+  background-color: transparent;
+  --tw-shadow: 0 1px 1px .5px #3333330a, 0 3px 3px -1.5px #33333305, 0 6px 6px -3px #3333330a, 0 12px 12px -6px #3333330a, 0 24px 24px -12px #3333330a, 0 48px 48px -24px #3333330a, 0 0 0 1px #3333331a, inset 0 -1px 1px -.5px #3333330f;
+  --tw-shadow-colored: 0 1px 1px .5px var(--tw-shadow-color), 0 3px 3px -1.5px var(--tw-shadow-color), 0 6px 6px -3px var(--tw-shadow-color), 0 12px 12px -6px var(--tw-shadow-color), 0 24px 24px -12px var(--tw-shadow-color), 0 48px 48px -24px var(--tw-shadow-color), 0 0 0 1px var(--tw-shadow-color), inset 0 -1px 1px -.5px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  color: var(--color-base-content);
+}
+
+
+.html-tabs button[data-slot] {
+  background-color: transparent;
+}
+
+.html-tabs *[data-slot="tab-indicator"] {
+  background-color: transparent;
+  box-shadow: none;
+}

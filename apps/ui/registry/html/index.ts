@@ -18,6 +18,16 @@ import buttonSm from "./button/button-sm";
 import buttonLg from "./button/button-lg";
 import buttonDisabled from "./button/button-disabled";
 import buttonColors from "./button/button-colors";
+import buttonSizes from "./button/button-sizes";
+import buttonSoft from "./button/button-soft";
+import buttonText from "./button/button-text";
+import buttonGradient from "./button/button-gradient";
+import buttonActive from "./button/button-active";
+import buttonWide from "./button/button-wide";
+import buttonBlock from "./button/button-block";
+import buttonShapes from "./button/button-shapes";
+import buttonIcon from "./button/button-icon";
+import buttonLoading from "./button/button-loading";
 
 export const HtmlIndex: Record<string, HtmlExample> = {
   // Button examples
@@ -31,4 +41,14 @@ export const HtmlIndex: Record<string, HtmlExample> = {
   [buttonSm.name]: buttonSm,
   [buttonLg.name]: buttonLg,
   [buttonDisabled.name]: buttonDisabled,
+  [buttonSizes.name]: buttonSizes,
+  [buttonSoft.name]: buttonSoft,
+  [buttonText.name]: buttonText,
+  [buttonGradient.name]: buttonGradient,
+  [buttonActive.name]: buttonActive,
+  [buttonWide.name]: buttonWide,
+  [buttonBlock.name]: buttonBlock,
+  [buttonShapes.name]: buttonShapes,
+  [buttonIcon.name]: buttonIcon,
+  [buttonLoading.name]: buttonLoading,
 };

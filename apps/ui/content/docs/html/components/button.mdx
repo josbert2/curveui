@@ -1,138 +1,98 @@
 ---
 title: Button
-description: A clickable button element with multiple variants and sizes.
+description: Buttons allow the user to take actions or make choices.
 ---
 
-A clickable button element with multiple variants and sizes. Pure HTML/CSS, no JavaScript required.
+Buttons allow the user to take actions or make choices.
+
+<ButtonClassesTable />
 
 ## Default Button
 
+The base button only requires the `btn` class. This provides the default styling with proper padding, typography, and hover states.
+
 <HtmlPreview name="button-default" />
 
+## Button Sizes
 
-## Colors
+Control the button size using `btn-xs`, `btn-sm`, `btn-md` (default), `btn-lg`, or `btn-xl`.
+
+<HtmlPreview name="button-sizes" />
+
+## Button Colors
+
+Apply semantic colors using `btn-primary`, `btn-secondary`, `btn-accent`, `btn-neutral`, `btn-info`, `btn-success`, `btn-warning`, or `btn-error`.
 
 <HtmlPreview name="button-colors" />
 
-## Variants
+## Soft Buttons
 
-### Primary
+Use `btn-soft` for a subtle, low-emphasis button style. Combine with color classes for colored soft buttons.
 
+<HtmlPreview name="button-soft" />
 
-<HtmlPreview name="button-primary" />
+## Outline Buttons
 
-### Secondary
-
-<HtmlPreview name="button-secondary" />
-
-### Outline
+Use `btn-outline` for buttons with transparent background and visible border.
 
 <HtmlPreview name="button-outline" />
 
-### Ghost
+## Text Buttons
+
+Use `btn-text` for minimal buttons without background or border.
+
+<HtmlPreview name="button-text" />
+
+## Gradient Buttons
+
+Use `btn-gradient` for buttons with animated gradient backgrounds.
+
+<HtmlPreview name="button-gradient" />
+
+## Ghost Button
+
+Use `btn-ghost` for buttons that blend with the background until hovered.
 
 <HtmlPreview name="button-ghost" />
 
-### Destructive
+## Active Buttons
 
-<HtmlPreview name="button-destructive" />
+Use `btn-active` to show a permanently pressed state.
 
-## Sizes
+<HtmlPreview name="button-active" />
 
-### Small
+## Disabled Buttons
 
-<HtmlPreview name="button-sm" />
-
-### Large
-
-<HtmlPreview name="button-lg" />
-
-## Disabled State
+Use `btn-disabled` class or the native `disabled` attribute to indicate a button cannot be clicked.
 
 <HtmlPreview name="button-disabled" />
 
-## Full CSS
+## Wide Button
 
-Here's the complete CSS for all button variants:
+Use `btn-wide` for buttons with more horizontal padding.
 
-```css
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  white-space: nowrap;
-  border-radius: 0.5rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  padding: 0.5rem 1rem;
-  min-height: 2rem;
-  border: 1px solid transparent;
-  cursor: pointer;
-  transition: all 150ms ease;
-  background-color: #18181b;
-  color: white;
-}
+<HtmlPreview name="button-wide" />
 
-.btn:hover {
-  background-color: #27272a;
-}
+## Block Button
 
-.btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
+Use `btn-block` for full-width buttons that span the entire container.
 
-/* Variants */
-.btn-primary {
-  background-color: #2563eb;
-}
-.btn-primary:hover {
-  background-color: #1d4ed8;
-}
+<HtmlPreview name="button-block" />
 
-.btn-secondary {
-  background-color: #f4f4f5;
-  color: #18181b;
-}
-.btn-secondary:hover {
-  background-color: #e4e4e7;
-}
+## Square and Circle Buttons
 
-.btn-outline {
-  background-color: transparent;
-  border-color: #e4e4e7;
-  color: #18181b;
-}
-.btn-outline:hover {
-  background-color: #f4f4f5;
-}
+Use `btn-square` for icon buttons with 1:1 ratio, or `btn-circle` for rounded icon buttons.
 
-.btn-ghost {
-  background-color: transparent;
-  color: #18181b;
-}
-.btn-ghost:hover {
-  background-color: #f4f4f5;
-}
+<HtmlPreview name="button-shapes" />
 
-.btn-destructive {
-  background-color: #dc2626;
-}
-.btn-destructive:hover {
-  background-color: #b91c1c;
-}
+## Button with Icon
 
-/* Sizes */
-.btn-sm {
-  min-height: 1.75rem;
-  padding: 0.25rem 0.625rem;
-  font-size: 0.75rem;
-}
+Add icons inside buttons using SVG elements. Icons automatically scale with the button.
 
-.btn-lg {
-  min-height: 2.5rem;
-  padding: 0.5rem 1.25rem;
-  font-size: 1rem;
-}
-```
+<HtmlPreview name="button-icon" />
+
+## Button with Loading
+
+Use the `loading` component inside buttons to indicate a pending action.
+
+<HtmlPreview name="button-loading" />

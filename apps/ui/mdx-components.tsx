@@ -11,6 +11,7 @@ import { CodeTabs } from "@/components/code-tabs";
 import { ComponentPreview } from "@/components/component-preview";
 import { ComponentSource } from "@/components/component-source";
 import { HtmlPreview } from "@/components/html-preview";
+import { ClassesTable, buttonClasses, ButtonClassesTable } from "@/components/ClassesTable";
 import { cn } from "@/lib/utils";
 import {
   Accordion,
@@ -60,6 +61,9 @@ export const mdxComponents = {
   ComponentPreview,
   ComponentSource,
   HtmlPreview,
+  ClassesTable,
+  buttonClasses,
+  ButtonClassesTable,
   code: ({
     className,
     __raw__,

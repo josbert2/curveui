@@ -24,7 +24,7 @@ export function HtmlPreviewClient({
 
   return (
     <div
-      className={cn("group relative mt-4 mb-12 flex flex-col gap-2", className)}
+      className={cn("group relative mt-4 mb-12 flex flex-col gap-2 html-tabs", className)}
       {...props}
     >
       <Tabs onValueChange={setTab} value={tab}>
