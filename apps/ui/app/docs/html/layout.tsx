@@ -2,7 +2,7 @@ import { DocsSidebar } from "@/components/docs-sidebar";
 import { htmlSource } from "@/lib/source";
 import { SidebarProvider } from "@/registry/default/ui/sidebar";
 import FlyonuiScript from "./FlyonuiScript";
-import { Inter, Plus_Jakarta_Sans, DM_Sans, Outfit } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans, DM_Sans, Outfit, Fredoka } from "next/font/google";
 import localFont from "next/font/local";
 
 import "@/styles/flyoui.css";
@@ -29,6 +29,13 @@ const dmSans = DM_Sans({
 const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-outfit",
+  display: "swap",
+});
+
+const fredoka = Fredoka({
+  subsets: ["latin"],
+  variable: "--font-fredoka",
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -63,8 +70,9 @@ export const fonts = {
   jakarta: { name: "Plus Jakarta Sans", variable: "--font-jakarta", active: false },
   dm: { name: "DM Sans", variable: "--font-dm", active: false },
   outfit: { name: "Outfit", variable: "--font-outfit", active: false },
-  avenir: { name: "Avenir", variable: "--font-avenir", active: false },
+  avenir: { name: "Avenir", variable: "--font-avenir", active: true },
   pangram: { name: "Pangram", variable: "--font-pangram", active: true },
+  fredoka: { name: "Fredoka", variable: "--font-fredoka", active: true },
 };
 
 export default function HtmlDocsLayout({
@@ -72,18 +80,18 @@ export default function HtmlDocsLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const fontClasses = `${inter.variable} ${plusJakarta.variable} ${dmSans.variable} ${outfit.variable} ${avenir.variable} ${pangram.variable}`;
+  const fontClasses = `${inter.variable} ${plusJakarta.variable} ${dmSans.variable} ${outfit.variable} ${avenir.variable} ${pangram.variable} ${fredoka.variable}`;
   
   // Change font-family here to use different font:
   // var(--font-inter) | var(--font-jakarta) | var(--font-dm) | var(--font-outfit) | var(--font-avenir) | var(--font-pangram)
-  const activeFont = "var(--font-inter)";
+  const activeFont = "var(--font-fredoka)";
   
   return (
-    <div className={fontClasses} style={{ fontFamily: activeFont }}>
+    <div className={`${fontClasses} cozy-layout`} style={{ fontFamily: activeFont }}>
       <main className="flex flex-1 flex-col">
-        <SidebarProvider className="container min-h-min flex-1 items-start px-0 [--sidebar-width:220px] [--top-spacing:0] lg:grid lg:grid-cols-[var(--sidebar-width)_minmax(0,1fr)] lg:[--sidebar-width:240px] lg:[--top-spacing:calc(var(--spacing)*4)]">
+        <SidebarProvider className="container min-h-min flex-1 items-start px-0 [--sidebar-width:260px] [--top-spacing:0] lg:grid lg:grid-cols-[var(--sidebar-width)_minmax(0,1fr)] lg:[--sidebar-width:280px] lg:[--top-spacing:calc(var(--spacing)*4)]">
           <DocsSidebar tree={htmlSource.pageTree} framework="html" />
-          <div className="h-full w-full">{children}</div>
+          <div className="cozy-content h-full w-full">{children}</div>
         </SidebarProvider>
       </main>
       <FlyonuiScript />

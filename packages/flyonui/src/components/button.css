@@ -18,7 +18,7 @@
   background-color: var(--btn-bg);
   background-size: auto, calc(var(--noise) * 100%);
   background-image: none, var(--btn-noise);
-  border: var(--border) solid var(--btn-border);
+  border: 1px solid var(--btn-border);
   box-shadow: 0 .5px 0 .5px oklch(100% 0 0 / calc(var(--depth) * 6%)) inset, var(--btn-shadow);
 
   --size: calc(var(--size-field, 0.25rem) * 9.5);

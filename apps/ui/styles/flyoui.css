@@ -9,22 +9,32 @@
   --color-base-200: oklch(97.33% 0.008 271.33);
   --color-base-300: oklch(48.52% 0.0225 279.09);
   --color-base-content: oklch(42.06% 0.049 276.53);
-  --color-primary: oklch(62.31% 0.188 259.81);
+  
+  --color-primary: oklch(71.5% 0.065 260);
   --color-primary-content: oklch(97.05% 0.014 254.6);
-  --color-secondary:oklch(76.662% .135 153.45);
+
+  --color-secondary: oklch(70.34% 0.096 302.64);
   --color-secondary-content: oklch(33.387% .04 162.24);
-  --color-accent: oklch(72.772% .149 33.2);
+
+  --color-accent: oklch(74.13% 0.119 29.09);
   --color-accent-content: oklch(0% 0 0);
-  --color-neutral: oklch(0.447 0.0732 274.26);
+
+  --color-neutral: oklch(71.73% 0.007 17.32);
   --color-neutral-content: oklch(82.15% 0.055 277.12);
-  --color-info: oklch(70.38% 0.123 182.5);
+
+  --color-info: oklch(74.26% 0.056 198.91);
   --color-info-content: oklch(98.36% 0.014 180.72);
-  --color-success: oklch(76.81% 0.204 130.85);
+
+
+  --color-success: oklch(81.95% 0.112 125.18);
   --color-success-content: oklch(98.57% 0.031 120.76);
-  --color-warning: oklch(79.52% 0.162 86.05);
+
+  --color-warning: oklch(81.30% 0.101 68.94);
   --color-warning-content: oklch(98.73% 0.026 102.21);
-  --color-error: oklch(64.5% 0.215 16.44);
+
+  --color-error: oklch(74.13% 0.119 29.09);
   --color-error-content: oklch(96.94% 0.015 12.42);
+
   --radius-selector: 1rem;
   --radius-field: 12px;
   --radius-box: 1rem;
@@ -172,4 +182,212 @@ body, html {
 .html-tabs *[data-slot="tab-indicator"] {
   background-color: transparent;
   box-shadow: none;
+}
+
+/* ============================================
+   🍑 COZY/KAWAII THEME - HTML LAYOUT
+   ============================================ */
+
+.cozy-layout {
+  /* Soft warm cream background with dot pattern */
+  background-color: #F6EFED;
+  background-image: radial-gradient(circle, #e0d5d2 1px, transparent 1px);
+  background-size: 20px 20px;
+  min-height: 100vh;
+}
+
+/* Cozy Sidebar Group - scoped to HTML layout */
+[data-slot="sidebar-group-label"] {
+  color: #957C84 !important;
+  font-family: 'Fredoka', sans-serif !important;
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* Cozy Sidebar Menu Button - remove ugly gradient */
+.cozy-layout [data-slot="sidebar-menu-button"] {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+.cozy-layout [data-slot="sidebar-menu-button"][data-active="true"] {
+
+  background-image: none !important;
+  color: #767676 !important;
+  border-radius: 9999px;
+}
+
+.cozy-layout [data-slot="sidebar-menu-button"][data-active="true"]::after {
+  content: "•";
+  margin-left: auto;
+  font-size: 2.2em;
+  opacity: 0.8;
+  color:#947DB6;
+}
+
+/* Cozy Sidebar */
+.cozy-sidebar {
+  background: oklch(99% 0.005 350);
+  border-right: 1px solid oklch(90% 0.02 320);
+  padding: 1.5rem;
+  border-radius: 0 1.5rem 1.5rem 0;
+}
+
+/* Cozy navigation links - pill style */
+.cozy-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  margin-bottom: 0.5rem;
+  color: oklch(35% 0.03 300);
+}
+
+.cozy-nav-link:hover {
+  transform: translateX(4px);
+  box-shadow: 0 2px 8px oklch(70% 0.05 300 / 20%);
+}
+
+/* Color variants for nav links */
+.cozy-nav-link--sky {
+  background: oklch(88% 0.08 220);
+  color: oklch(35% 0.05 220);
+}
+.cozy-nav-link--sky:hover {
+  background: oklch(85% 0.1 220);
+}
+
+.cozy-nav-link--lavender {
+  background: oklch(88% 0.08 290);
+  color: oklch(35% 0.05 290);
+}
+.cozy-nav-link--lavender:hover {
+  background: oklch(85% 0.1 290);
+}
+
+.cozy-nav-link--coral {
+  background: oklch(88% 0.1 25);
+  color: oklch(35% 0.05 25);
+}
+.cozy-nav-link--coral:hover {
+  background: oklch(85% 0.12 25);
+}
+
+.cozy-nav-link--mint {
+  background: oklch(88% 0.08 175);
+  color: oklch(35% 0.05 175);
+}
+.cozy-nav-link--mint:hover {
+  background: oklch(85% 0.1 175);
+}
+
+.cozy-nav-link--rose {
+  background: oklch(88% 0.1 350);
+  color: oklch(35% 0.05 350);
+}
+.cozy-nav-link--rose:hover {
+  background: oklch(85% 0.12 350);
+}
+
+.cozy-nav-link--teal {
+  background: oklch(88% 0.08 195);
+  color: oklch(35% 0.05 195);
+}
+.cozy-nav-link--teal:hover {
+  background: oklch(85% 0.1 195);
+}
+
+.cozy-nav-link--peach {
+  background: oklch(88% 0.08 60);
+  color: oklch(35% 0.05 60);
+}
+.cozy-nav-link--peach:hover {
+  background: oklch(85% 0.1 60);
+}
+
+.cozy-nav-link--neutral {
+  background: oklch(92% 0.01 300);
+  color: oklch(40% 0.02 300);
+}
+.cozy-nav-link--neutral:hover {
+  background: oklch(88% 0.015 300);
+}
+
+/* Cozy content area */
+.cozy-content {
+  background: oklch(99% 0.003 350);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  margin: 1rem;
+  box-shadow: 
+    0 4px 6px -1px oklch(70% 0.02 300 / 10%),
+    0 2px 4px -2px oklch(70% 0.02 300 / 10%);
+}
+
+/* Cozy cards */
+.cozy-card {
+  background: oklch(100% 0 0);
+  border: 1px solid oklch(92% 0.015 320);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  box-shadow: 
+    0 1px 3px oklch(70% 0.02 300 / 8%),
+    0 1px 2px oklch(70% 0.02 300 / 12%);
+  transition: all 0.2s ease;
+}
+
+.cozy-card:hover {
+  box-shadow: 
+    0 4px 12px oklch(70% 0.02 300 / 15%),
+    0 2px 4px oklch(70% 0.02 300 / 10%);
+  transform: translateY(-2px);
+}
+
+/* Cozy buttons */
+.cozy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.cozy-btn--primary {
+  background: oklch(78% 0.09 220);
+  color: oklch(98% 0.01 220);
+}
+.cozy-btn--primary:hover {
+  background: oklch(72% 0.1 220);
+  box-shadow: 0 4px 12px oklch(78% 0.09 220 / 40%);
+}
+
+.cozy-btn--secondary {
+  background: oklch(75% 0.1 290);
+  color: oklch(98% 0.01 290);
+}
+.cozy-btn--secondary:hover {
+  background: oklch(70% 0.11 290);
+  box-shadow: 0 4px 12px oklch(75% 0.1 290 / 40%);
+}
+
+/* Cozy title styling */
+.cozy-title {
+  font-weight: 600;
+  color: oklch(40% 0.04 300);
+  letter-spacing: -0.02em;
+}
+
+.cozy-subtitle {
+  color: oklch(55% 0.03 300);
+  font-weight: 400;
 }
