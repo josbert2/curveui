@@ -1,5 +1,5 @@
 export default {
-  "**/*.{js,ts,jsx,tsx,md,mdx,json}": () => [
-    "bunx biome check --write --no-errors-on-unmatched",
+  "**/*.{js,ts,jsx,tsx,md,mdx,json}": (files) => [
+    `bunx biome check --write --no-errors-on-unmatched ${files.map((f) => `"${f}"`).join(" ")}`,
   ],
 };

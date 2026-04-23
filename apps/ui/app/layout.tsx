@@ -2,7 +2,8 @@ import "./globals.css";
 
 import { ThemeProvider } from "@coss/ui/components/theme-provider";
 import type { Metadata } from "next";
-import { Cal_Sans as FontHeading, Inter as FontSans } from "next/font/google";
+import { Cal_Sans as FontHeading } from "next/font/google";
+import localFont from "next/font/local";
 
 import { SiteHeader } from "@/components/site-header";
 import { ThemeEditor } from "@/components/ThemeEditor";
@@ -11,8 +12,35 @@ import {
   ToastProvider,
 } from "@/registry/default/ui/toast";
 
-const fontSans = FontSans({
-  subsets: ["latin"],
+const fontSans = localFont({
+  display: "swap",
+  src: [
+    {
+      path: "../public/fonts/euclidcircularb-light.woff2",
+      style: "normal",
+      weight: "300",
+    },
+    {
+      path: "../public/fonts/euclidcircularb-regular.woff2",
+      style: "normal",
+      weight: "400",
+    },
+    {
+      path: "../public/fonts/euclidcircularb-regular-italic.woff2",
+      style: "italic",
+      weight: "400",
+    },
+    {
+      path: "../public/fonts/euclidcircularb-medium.woff2",
+      style: "normal",
+      weight: "500",
+    },
+    {
+      path: "../public/fonts/euclidcircularb-semibold.woff2",
+      style: "normal",
+      weight: "600",
+    },
+  ],
   variable: "--font-sans",
 });
 
