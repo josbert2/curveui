@@ -1,5 +1,4 @@
 export default {
-  name: "button-colors",
   description: "Button colors",
   html: `
     <button class="btn btn-primary" data-border-pulse>
@@ -34,4 +33,5 @@ export default {
         Error
     </button>
 `,
+  name: "button-colors",
 };

@@ -1,5 +1,4 @@
 export default {
-  name: "button-gradient",
   description: "Gradient style buttons",
   html: `<button class="btn btn-gradient">Default</button>
 <button class="btn btn-gradient btn-primary">Primary</button>
@@ -9,4 +8,5 @@ export default {
 <button class="btn btn-gradient btn-success">Success</button>
 <button class="btn btn-gradient btn-warning">Warning</button>
 <button class="btn btn-gradient btn-error">Error</button>`,
+  name: "button-gradient",
 };

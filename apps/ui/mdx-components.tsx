@@ -4,14 +4,113 @@ import { InfoIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import type * as React from "react";
-
+import {
+  AccordionClassesTable,
+  AdvanceSelectClassesTable,
+  AlertClassesTable,
+  AvatarClassesTable,
+  accordionClasses,
+  advanceSelectClasses,
+  alertClasses,
+  avatarClasses,
+  BadgeClassesTable,
+  BreadcrumbsClassesTable,
+  ButtonClassesTable,
+  badgeClasses,
+  breadcrumbsClasses,
+  buttonClasses,
+  CardClassesTable,
+  CarouselClassesTable,
+  ChatClassesTable,
+  CheckboxClassesTable,
+  ClassesTable,
+  CollapseClassesTable,
+  CustomOptionsClassesTable,
+  cardClasses,
+  carouselClasses,
+  chatClasses,
+  checkboxClasses,
+  collapseClasses,
+  customOptionsClasses,
+  DiffClassesTable,
+  DividerClassesTable,
+  DrawerClassesTable,
+  DropdownClassesTable,
+  diffClasses,
+  dividerClasses,
+  drawerClasses,
+  dropdownClasses,
+  FileinputClassesTable,
+  FilterClassesTable,
+  FooterClassesTable,
+  fileinputClasses,
+  filterClasses,
+  footerClasses,
+  IndicatorClassesTable,
+  InputClassesTable,
+  indicatorClasses,
+  inputClasses,
+  KbdClassesTable,
+  kbdClasses,
+  LabelClassesTable,
+  LinkClassesTable,
+  LoadingClassesTable,
+  labelClasses,
+  linkClasses,
+  loadingClasses,
+  MaskClassesTable,
+  MenuClassesTable,
+  MockupClassesTable,
+  ModalClassesTable,
+  maskClasses,
+  menuClasses,
+  mockupClasses,
+  modalClasses,
+  NavbarClassesTable,
+  navbarClasses,
+  PinInputClassesTable,
+  ProgressClassesTable,
+  pinInputClasses,
+  progressClasses,
+  RadialprogressClassesTable,
+  RadioClassesTable,
+  RangeClassesTable,
+  radialprogressClasses,
+  radioClasses,
+  rangeClasses,
+  SelectClassesTable,
+  SkeletonClassesTable,
+  StackClassesTable,
+  StatClassesTable,
+  StatusClassesTable,
+  SwapClassesTable,
+  SwitchesClassesTable,
+  selectClasses,
+  skeletonClasses,
+  stackClasses,
+  statClasses,
+  statusClasses,
+  swapClasses,
+  switchesClasses,
+  TabClassesTable,
+  TableClassesTable,
+  TextareaClassesTable,
+  TimelineClassesTable,
+  TooltipClassesTable,
+  tabClasses,
+  tableClasses,
+  textareaClasses,
+  timelineClasses,
+  tooltipClasses,
+  ValidationClassesTable,
+  validationClasses,
+} from "@/components/ClassesTable";
 import { CodeBlockCommand } from "@/components/code-block-command";
 import { CodeCollapsibleWrapper } from "@/components/code-collapsible-wrapper";
 import { CodeTabs } from "@/components/code-tabs";
 import { ComponentPreview } from "@/components/component-preview";
 import { ComponentSource } from "@/components/component-source";
 import { HtmlPreview } from "@/components/html-preview";
-import { ClassesTable, buttonClasses, ButtonClassesTable } from "@/components/ClassesTable";
 import { cn } from "@/lib/utils";
 import {
   Accordion,
@@ -31,15 +130,19 @@ import { Tabs, TabsList, TabsPanel, TabsTab } from "@/registry/default/ui/tabs";
 
 export const mdxComponents = {
   Accordion,
+  AccordionClassesTable,
   AccordionItem,
   AccordionPanel,
   AccordionTrigger,
+  AdvanceSelectClassesTable,
   Alert: ({ className, ...props }: React.ComponentProps<typeof Alert>) => (
     <Alert className={cn("my-6", className)} {...props} />
   ),
   AlertAction,
+  AlertClassesTable,
   AlertDescription,
   AlertTitle,
+  AvatarClassesTable,
   a: ({ className, ...props }: React.ComponentProps<"a">) => (
     <a
       className={cn(
@@ -49,21 +152,38 @@ export const mdxComponents = {
       {...props}
     />
   ),
+  accordionClasses,
+  advanceSelectClasses,
+  alertClasses,
+  avatarClasses,
+  BadgeClassesTable,
+  BreadcrumbsClassesTable,
   Button,
+  ButtonClassesTable,
+  badgeClasses,
   blockquote: ({ className, ...props }: React.ComponentProps<"blockquote">) => (
     <blockquote
       className={cn("mt-6 border-l-2 ps-6 italic", className)}
       {...props}
     />
   ),
+  breadcrumbsClasses,
+  buttonClasses,
+  CardClassesTable,
+  CarouselClassesTable,
+  ChatClassesTable,
+  CheckboxClassesTable,
+  ClassesTable,
   CodeCollapsibleWrapper,
   CodeTabs,
+  CollapseClassesTable,
   ComponentPreview,
   ComponentSource,
-  HtmlPreview,
-  ClassesTable,
-  buttonClasses,
-  ButtonClassesTable,
+  CustomOptionsClassesTable,
+  cardClasses,
+  carouselClasses,
+  chatClasses,
+  checkboxClasses,
   code: ({
     className,
     __raw__,
@@ -115,6 +235,19 @@ export const mdxComponents = {
       </>
     );
   },
+  collapseClasses,
+  customOptionsClasses,
+  DiffClassesTable,
+  DividerClassesTable,
+  DrawerClassesTable,
+  DropdownClassesTable,
+  diffClasses,
+  dividerClasses,
+  drawerClasses,
+  dropdownClasses,
+  FileinputClassesTable,
+  FilterClassesTable,
+  FooterClassesTable,
   figcaption: ({
     className,
     children,
@@ -141,6 +274,10 @@ export const mdxComponents = {
   figure: ({ className, ...props }: React.ComponentProps<"figure">) => {
     return <figure className={cn(className)} {...props} />;
   },
+  fileinputClasses,
+  filterClasses,
+  footerClasses,
+  HtmlPreview,
   h1: ({ className, ...props }: React.ComponentProps<"h1">) => (
     <h1
       className={cn("mt-2 scroll-m-20 font-heading text-3xl", className)}
@@ -247,25 +384,49 @@ export const mdxComponents = {
       {...props}
     />
   ),
+  IndicatorClassesTable,
   InfoIcon,
+  InputClassesTable,
   img: ({ className, alt, ...props }: React.ComponentProps<"img">) => (
     <img alt={alt} className={cn("rounded-md", className)} {...props} />
   ),
+  indicatorClasses,
+  inputClasses,
+  KbdClassesTable,
+  kbdClasses,
+  LabelClassesTable,
   Link: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
     <Link
       className={cn("font-medium underline underline-offset-4", className)}
       {...props}
     />
   ),
+  LinkClassesTable,
+  LoadingClassesTable,
+  labelClasses,
   li: ({ className, ...props }: React.ComponentProps<"li">) => (
     <li className={cn("mt-2", className)} {...props} />
   ),
+  linkClasses,
+  loadingClasses,
+  MaskClassesTable,
+  MenuClassesTable,
+  MockupClassesTable,
+  ModalClassesTable,
+  maskClasses,
+  menuClasses,
+  mockupClasses,
+  modalClasses,
+  NavbarClassesTable,
+  navbarClasses,
   ol: ({ className, ...props }: React.ComponentProps<"ol">) => (
     <ol
       className={cn("my-6 ms-6 list-decimal text-muted-foreground", className)}
       {...props}
     />
   ),
+  PinInputClassesTable,
+  ProgressClassesTable,
   p: ({ className, ...props }: React.ComponentProps<"p">) => (
     <p
       className={cn(
@@ -275,6 +436,7 @@ export const mdxComponents = {
       {...props}
     />
   ),
+  pinInputClasses,
   pre: ({ className, children, ...props }: React.ComponentProps<"pre">) => {
     return (
       <pre
@@ -288,6 +450,18 @@ export const mdxComponents = {
       </pre>
     );
   },
+  progressClasses,
+  RadialprogressClassesTable,
+  RadioClassesTable,
+  RangeClassesTable,
+  radialprogressClasses,
+  radioClasses,
+  rangeClasses,
+  SelectClassesTable,
+  SkeletonClassesTable,
+  StackClassesTable,
+  StatClassesTable,
+  StatusClassesTable,
   Step: ({ className, ...props }: React.ComponentProps<"h3">) => (
     <h3
       className={cn("mt-8 scroll-m-32 font-medium tracking-tight", className)}
@@ -300,15 +474,26 @@ export const mdxComponents = {
       {...props}
     />
   ),
+  SwapClassesTable,
+  SwitchesClassesTable,
+  selectClasses,
+  skeletonClasses,
+  stackClasses,
+  statClasses,
+  statusClasses,
   strong: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
     <strong
       className={cn("font-medium text-foreground", className)}
       {...props}
     />
   ),
+  swapClasses,
+  switchesClasses,
   Tab: ({ className, ...props }: React.ComponentProps<"div">) => (
     <div className={cn(className)} {...props} />
   ),
+  TabClassesTable,
+  TableClassesTable,
   Tabs: ({ className, ...props }: React.ComponentProps<typeof Tabs>) => {
     return <Tabs className={cn(className)} {...props} />;
   },
@@ -339,6 +524,10 @@ export const mdxComponents = {
   TabsTab: ({ className, ...props }: React.ComponentProps<typeof TabsTab>) => (
     <TabsTab className={cn("rounded-lg", className)} {...props} />
   ),
+  TextareaClassesTable,
+  TimelineClassesTable,
+  TooltipClassesTable,
+  tabClasses,
   table: ({ className, ...props }: React.ComponentProps<"table">) => (
     <ScrollArea
       className="my-6 w-full [&+[data-slot=scroll-area-scrollbar]]:translate-y-2.5"
@@ -350,6 +539,7 @@ export const mdxComponents = {
       />
     </ScrollArea>
   ),
+  tableClasses,
   td: ({ className, ...props }: React.ComponentProps<"td">) => (
     <td
       className={cn(
@@ -359,6 +549,7 @@ export const mdxComponents = {
       {...props}
     />
   ),
+  textareaClasses,
   th: ({ className, ...props }: React.ComponentProps<"th">) => (
     <th
       className={cn(
@@ -368,6 +559,8 @@ export const mdxComponents = {
       {...props}
     />
   ),
+  timelineClasses,
+  tooltipClasses,
   tr: ({ className, ...props }: React.ComponentProps<"tr">) => (
     <tr
       className={cn("m-0 border-b last:border-b-none", className)}
@@ -380,4 +573,6 @@ export const mdxComponents = {
       {...props}
     />
   ),
+  ValidationClassesTable,
+  validationClasses,
 };
