@@ -1,12 +1,11 @@
 // FlyonuiScript.tsx
-'use client';
+"use client";
 
-import { usePathname } from 'next/navigation';
-import { useEffect } from 'react';
-
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 
 async function loadFlyonUI() {
-  return import('@coss/flyonui/flyonui.js');
+  return import("@coss/flyonui/flyonui.js");
 }
 
 export default function FlyonuiScript() {
@@ -24,7 +23,7 @@ export default function FlyonuiScript() {
     setTimeout(() => {
       if (
         window.HSAccordion &&
-        typeof window.HSAccordion.autoInit === 'function'
+        typeof window.HSAccordion.autoInit === "function"
       ) {
         window.HSAccordion.autoInit();
       }

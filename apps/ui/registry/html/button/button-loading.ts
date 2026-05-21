@@ -1,5 +1,4 @@
 export default {
-  name: "button-loading",
   description: "Button with loading spinner",
   html: `<button class="btn btn-square">
   <span class="loading loading-spinner"></span>
@@ -8,4 +7,5 @@ export default {
   <span class="loading loading-spinner"></span>
   Loading
 </button>`,
+  name: "button-loading",
 };

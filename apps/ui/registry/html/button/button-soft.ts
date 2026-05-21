@@ -1,5 +1,4 @@
 export default {
-  name: "button-soft",
   description: "Soft style buttons",
   html: `<button class="btn btn-soft">Default</button>
 <button class="btn btn-soft btn-primary">Primary</button>
@@ -9,4 +8,5 @@ export default {
 <button class="btn btn-soft btn-success">Success</button>
 <button class="btn btn-soft btn-warning">Warning</button>
 <button class="btn btn-soft btn-error">Error</button>`,
+  name: "button-soft",
 };

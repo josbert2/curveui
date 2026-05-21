@@ -1,164 +1,217 @@
-import { generateThemesObject } from './functions/generateThemesObject.js'
-import { generateThemeFiles } from './functions/generateThemeFiles.js'
-import { generateColorRules } from './functions/generateColorRules.js'
-import { generateRawStyles } from './functions/generateRawStyles.js'
-import { minify, minifyCssInDirectory } from './functions/minify.js'
-import { generatePlugins } from './functions/generatePlugins.js'
-import { generateImports } from './functions/generateImports.js'
-import { extractClasses } from './functions/extractClasses.js'
-import { generateThemes } from './functions/generateThemes.js'
-import { generateChunks } from './functions/generateChunks.js'
-import { removeFiles } from './functions/removeFiles.js'
-import { copyFile } from './functions/copyFile.js'
-import { packCss } from './functions/packCss.js'
-import { report } from './functions/report.js'
-import { version } from './package.json'
+import fs from "node:fs";
+import { copyFile } from "./functions/copyFile.js";
+import { extractClasses } from "./functions/extractClasses.js";
+import { generateChunks } from "./functions/generateChunks.js";
+import { generateColorRules } from "./functions/generateColorRules.js";
+import { generateImports } from "./functions/generateImports.js";
+import { generatePlugins } from "./functions/generatePlugins.js";
+import { generateRawStyles } from "./functions/generateRawStyles.js";
+import { generateThemeFiles } from "./functions/generateThemeFiles.js";
+import { generateThemes } from "./functions/generateThemes.js";
+import { generateThemesObject } from "./functions/generateThemesObject.js";
+import { minify, minifyCssInDirectory } from "./functions/minify.js";
+import { packCss } from "./functions/packCss.js";
+import { removeFiles } from "./functions/removeFiles.js";
+import { report } from "./functions/report.js";
+import { version } from "./package.json";
 
-const isDev = process.argv.includes('--dev')
+const isDev = process.argv.includes("--dev");
 
 async function generateFiles() {
   await Promise.all([
-    copyFile('./functions/themePlugin.js', './theme/themePlugin.js', 'index.js'),
+    copyFile(
+      "./functions/themePlugin.js",
+      "./theme/themePlugin.js",
+      "index.js",
+    ),
 
     !isDev &&
       generateColorRules({
-        distDir: '../colors',
-        properties: ['bg', 'text', 'border'],
-        breakpoints: ['sm', 'md', 'lg', 'xl', '2xl'],
-        states: ['hover'],
+        breakpoints: ["sm", "md", "lg", "xl", "2xl"],
+        distDir: "../colors",
         opacities: {
-          properties: ['10', '20', '30', '40', '50', '60', '70', '80', '90'],
+          properties: ["10", "20", "30", "40", "50", "60", "70", "80", "90"],
           responsive: [],
-          states: []
+          states: [],
         },
         outputFiles: {
-          properties: 'properties.css',
-          responsive: 'responsive.css',
-          states: 'states.css'
-        }
+          properties: "properties.css",
+          responsive: "responsive.css",
+          states: "states.css",
+        },
+        properties: ["bg", "text", "border"],
+        states: ["hover"],
       }),
 
     !isDev &&
       generateColorRules({
-        distDir: '../colors',
-        properties: ['bg', 'text', 'border'],
         breakpoints: [],
-        states: ['focus', 'active'],
+        distDir: "../colors",
         outputFiles: {
-          states: 'states-extended.css'
-        }
+          states: "states-extended.css",
+        },
+        properties: ["bg", "text", "border"],
+        states: ["focus", "active"],
       }),
 
     !isDev &&
       generateColorRules({
-        distDir: '../colors',
-        properties: ['bg', 'text', 'border'],
-        breakpoints: ['max-sm', 'max-md', 'max-lg', 'max-xl', 'max-2xl'],
+        breakpoints: ["max-sm", "max-md", "max-lg", "max-xl", "max-2xl"],
+        distDir: "../colors",
+        outputFiles: {
+          responsive: "responsive-extended.css",
+        },
+        properties: ["bg", "text", "border"],
         states: [],
-        outputFiles: {
-          responsive: 'responsive-extended.css'
-        }
       }),
 
     !isDev &&
       generateColorRules({
-        distDir: '../colors',
+        breakpoints: [],
+        distDir: "../colors",
+        outputFiles: {
+          properties: "properties-extended.css",
+        },
         properties: [
-          'from',
-          'via',
-          'to',
-          'ring',
+          "from",
+          "via",
+          "to",
+          "ring",
           // "ring-offset",
-          'fill',
-          'stroke',
+          "fill",
+          "stroke",
           // "caret",
           // "divide",
           // "accent",
-          'shadow',
-          'outline'
+          "shadow",
+          "outline",
           // "decoration",
           // "placeholder",
         ],
-        breakpoints: [],
         states: [],
-        outputFiles: {
-          properties: 'properties-extended.css'
-        }
       }),
 
-    !isDev && generateThemeFiles({ srcDir: 'src/themes', distDir: 'theme' }),
-
-    !isDev && generateRawStyles({ srcDir: '../src/base', distDir: '../base', layer: 'base' }),
+    !isDev && generateThemeFiles({ distDir: "theme", srcDir: "src/themes" }),
 
     !isDev &&
       generateRawStyles({
-        srcDir: '../src/components',
-        distDir: '../components',
-        responsive: true,
-        exclude: ['loading', 'filter', 'mask', 'mockup', 'skeleton', 'swap'],
-        layer: 'utilities'
+        distDir: "../base",
+        layer: "base",
+        srcDir: "../src/base",
       }),
 
     !isDev &&
       generateRawStyles({
-        srcDir: '../src/utilities',
-        distDir: '../utilities',
+        distDir: "../components",
+        exclude: ["loading", "filter", "mask", "mockup", "skeleton", "swap"],
+        layer: "utilities",
         responsive: true,
-        exclude: ['typography', 'glass'],
-        layer: 'utilities'
+        srcDir: "../src/components",
       }),
-    generatePlugins({ type: 'base', srcDir: 'src/themes', distDir: 'theme' }),
-    generatePlugins({ type: 'base', srcDir: 'src/base', distDir: 'base', exclude: ['reset'] }),
-    generatePlugins({ type: 'component', srcDir: 'src/components', distDir: 'components' }),
-    generatePlugins({ type: 'utility', srcDir: 'src/utilities', distDir: 'utilities' })
-  ])
+
+    !isDev &&
+      generateRawStyles({
+        distDir: "../utilities",
+        exclude: ["typography", "glass"],
+        layer: "utilities",
+        responsive: true,
+        srcDir: "../src/utilities",
+      }),
+    generatePlugins({ distDir: "theme", srcDir: "src/themes", type: "base" }),
+    generatePlugins({
+      distDir: "base",
+      exclude: ["reset"],
+      srcDir: "src/base",
+      type: "base",
+    }),
+    generatePlugins({
+      distDir: "components",
+      srcDir: "src/components",
+      type: "component",
+    }),
+    generatePlugins({
+      distDir: "utilities",
+      srcDir: "src/utilities",
+      type: "utility",
+    }),
+  ]);
   await Promise.all([
-    generateImports('imports.js'),
+    generateImports("imports.js"),
 
-    !isDev && generateChunks('chunks.css'),
+    !isDev && generateChunks("chunks.css"),
 
     !isDev &&
       packCss({
-        outputFile: 'flyonui.css',
         exclude: {
-          colors: ['properties-extended', 'responsive-extended', 'states-extended'],
+          colors: [
+            "properties-extended",
+            "responsive-extended",
+            "states-extended",
+          ],
           components: [],
-          utilities: []
-        }
+          utilities: [],
+        },
+        outputFile: "flyonui.css",
       }),
 
-    !isDev && generateThemes('themes.css'),
-    generateThemesObject('./theme/object.js')
-  ])
+    !isDev && generateThemes("themes.css"),
+    generateThemesObject("./theme/object.js"),
+  ]);
   await Promise.all([
-    extractClasses({ srcDir: 'components' }),
-    !isDev && minifyCssInDirectory(['colors', 'base', 'components', 'utilities']),
-    !isDev && minify('themes.css'),
-    !isDev && minify('flyonui.css')
-  ])
+    extractClasses({ srcDir: "components" }),
+    !isDev &&
+      minifyCssInDirectory(["colors", "base", "components", "utilities"]),
+    !isDev && minify("themes.css"),
+    !isDev && minify("flyonui.css"),
+  ]);
+}
+
+function patchMinifiedCss(filePath) {
+  if (!fs.existsSync(filePath)) return;
+  const css = fs.readFileSync(filePath, "utf8");
+  // lightningcss minify drops the `;` between a `var(...)` value and a nested `&:` selector.
+  // Re-insert it so PostCSS / Turbopack can parse the file.
+  const patched = css.replace(/\)&:/g, ");&:");
+  if (patched !== css) {
+    fs.writeFileSync(filePath, patched);
+  }
 }
 
 async function build() {
   try {
     !isDev &&
       (await removeFiles([
-        'base',
-        'colors',
-        'components',
-        'theme',
-        'utilities',
-        'chunks.css',
-        'flyonui.css',
-        'imports.js',
-        'themes.css'
-      ]))
-    console.time(`${decodeURIComponent('%F0%9F%9A%80')} ${atob('Zmx5b251aQ==')} ${version}`)
-    await generateFiles()
-    console.timeEnd(`${decodeURIComponent('%F0%9F%9A%80')} ${atob('Zmx5b251aQ==')} ${version}`)
-    !isDev && (await report(['base', 'components', 'utilities', 'colors', 'chunks.css', 'themes.css', 'flyonui.css']))
+        "base",
+        "colors",
+        "components",
+        "theme",
+        "utilities",
+        "chunks.css",
+        "flyonui.css",
+        "imports.js",
+        "themes.css",
+      ]));
+    console.time(
+      `${decodeURIComponent("%F0%9F%9A%80")} ${atob("Zmx5b251aQ==")} ${version}`,
+    );
+    await generateFiles();
+    !isDev && patchMinifiedCss("flyonui.css");
+    console.timeEnd(
+      `${decodeURIComponent("%F0%9F%9A%80")} ${atob("Zmx5b251aQ==")} ${version}`,
+    );
+    !isDev &&
+      (await report([
+        "base",
+        "components",
+        "utilities",
+        "colors",
+        "chunks.css",
+        "themes.css",
+        "flyonui.css",
+      ]));
   } catch (error) {
-    throw new Error('Build error: ' + error.message)
+    throw new Error("Build error: " + error.message);
   }
 }
 
-build(/* 🚀 */)
+build(/* 🚀 */);

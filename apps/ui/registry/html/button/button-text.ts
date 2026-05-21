@@ -1,5 +1,4 @@
 export default {
-  name: "button-text",
   description: "Text style buttons",
   html: `<button class="btn btn-text">Default</button>
 <button class="btn btn-text btn-primary">Primary</button>
@@ -9,4 +8,5 @@ export default {
 <button class="btn btn-text btn-success">Success</button>
 <button class="btn btn-text btn-warning">Warning</button>
 <button class="btn btn-text btn-error">Error</button>`,
+  name: "button-text",
 };

@@ -2,19 +2,20 @@
 @import "tailwindcss";
 
 /* Import flyonui from workspace */
+/* served as static asset from public/css/flyonui.css via <FlyonuiStyles /> */
 /*@import "@coss/flyonui/flyonui.css"; */
 
-@theme  {
+@theme {
   --color-base-100: oklch(99.43% 0.001 286.38);
   --color-base-200: oklch(97.33% 0.008 271.33);
   --color-base-300: oklch(48.52% 0.0225 279.09);
   --color-base-content: oklch(42.06% 0.049 276.53);
-  
+
   --color-primary: oklch(71.5% 0.065 260);
   --color-primary-content: oklch(97.05% 0.014 254.6);
 
   --color-secondary: oklch(70.34% 0.096 302.64);
-  --color-secondary-content: oklch(33.387% .04 162.24);
+  --color-secondary-content: oklch(33.387% 0.04 162.24);
 
   --color-accent: oklch(74.13% 0.119 29.09);
   --color-accent-content: oklch(0% 0 0);
@@ -24,7 +25,6 @@
 
   --color-info: oklch(74.26% 0.056 198.91);
   --color-info-content: oklch(98.36% 0.014 180.72);
-
 
   --color-success: oklch(81.95% 0.112 125.18);
   --color-success-content: oklch(98.57% 0.031 120.76);
@@ -47,12 +47,6 @@
 
 @import "../../../packages/flyonui/src/index.css";
 
-
-
-
-
-
-
 /*@plugin "@coss/flyonui";*/
 
 @custom-variant dark (&:is(.dark *));
@@ -61,7 +55,6 @@
   --color-background: var(--flyo-background);
   --color-foreground: var(--flyo-foreground);
 
-  
   --color-muted: var(--flyo-muted);
   --color-muted-foreground: var(--flyo-muted-foreground);
 
@@ -72,12 +65,12 @@
   --color-card-foreground: var(--flyo-card-foreground);
   --color-popover: var(--flyo-popover);
   --color-popover-foreground: var(--flyo-popover-foreground);
-  
+
   --radius-sm: calc(var(--flyo-radius) - 4px);
   --radius-md: calc(var(--flyo-radius) - 2px);
   --radius-lg: var(--flyo-radius);
   --radius-xl: calc(var(--flyo-radius) + 4px);
-  
+
   --font-sans: var(--font-sans);
 }
 
@@ -89,10 +82,10 @@
   --flyo-card-foreground: var(--color-zinc-900);
   --flyo-popover: var(--color-white);
   --flyo-popover-foreground: var(--color-zinc-900);
-  
+
   --flyo-muted: --alpha(var(--color-black) / 4%);
   --flyo-muted-foreground: var(--color-zinc-600);
- 
+
   --flyo-border: --alpha(var(--color-black) / 12%);
   --flyo-input: --alpha(var(--color-black) / 12%);
   --flyo-ring: var(--color-zinc-400);
@@ -101,14 +94,18 @@
 .dark {
   --flyo-background: var(--color-zinc-950);
   --flyo-foreground: var(--color-zinc-100);
-  --flyo-card: color-mix(in srgb, var(--color-zinc-900) 80%, var(--color-zinc-950));
+  --flyo-card: color-mix(
+    in srgb,
+    var(--color-zinc-900) 80%,
+    var(--color-zinc-950)
+  );
   --flyo-card-foreground: var(--color-zinc-100);
   --flyo-popover: var(--color-zinc-900);
   --flyo-popover-foreground: var(--color-zinc-100);
-  
+
   --flyo-muted: --alpha(var(--color-white) / 6%);
   --flyo-muted-foreground: var(--color-zinc-400);
- 
+
   --flyo-border: --alpha(var(--color-white) / 12%);
   --flyo-input: --alpha(var(--color-white) / 12%);
   --flyo-ring: var(--color-zinc-500);
@@ -127,53 +124,93 @@
 @layer components {
   /* Scope for flyoui components */
   .flyoui-scope {
-   
-   
   }
 }
 
-
-.after-boder-content::after{
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-    border: 1px solid color-mix(in oklab, var(--flyo-border) 50%, transparent);
-    background-color:transparent;
-    padding: 20px;
-    position: absolute;
-    inset: -7px;
-    z-index: 9999;
+.after-boder-content::after {
+  border-style: var(--tw-border-style);
+  border-width: 1px;
+  border: 1px solid color-mix(in oklab, var(--flyo-border) 50%, transparent);
+  background-color: transparent;
+  padding: 20px;
+  position: absolute;
+  inset: -7px;
+  z-index: 9999;
 }
 
-
-.flyoui-scope{
+.flyoui-scope {
   display: flex;
   flex-wrap: wrap;
   gap: 19px;
 }
 
-body, html {
-  font-family: 'pangram';
+body,
+html {
+  font-family: "pangram";
   font-weight: 400;
 }
 
-.font-Avenir{
-  font-family: 'Avenir', sans-serif !important;
+.font-Avenir {
+  font-family: "Avenir", sans-serif !important;
 }
 
-.box-shadow-ln{
-      --tw-shadow: 0 1px 1px 0.5px rgba(51, 51, 51, .04), 0 3px 3px -1.5px rgba(51, 51, 51, .02), 0 6px 6px -3px rgba(51, 51, 51, .04), 0 12px 12px -6px rgba(51, 51, 51, .04), 0 24px 24px -12px rgba(51, 51, 51, .04), 0 48px 48px -24px rgba(51, 51, 51, .04), 0 0 0 1px rgba(51, 51, 51, .1), inset 0 -1px 1px -0.5px rgba(51, 51, 51, .06);
-    --tw-shadow-colored: 0 1px 1px 0.5px var(--tw-shadow-color), 0 3px 3px -1.5px var(--tw-shadow-color), 0 6px 6px -3px var(--tw-shadow-color), 0 12px 12px -6px var(--tw-shadow-color), 0 24px 24px -12px var(--tw-shadow-color), 0 48px 48px -24px var(--tw-shadow-color), 0 0 0 1px var(--tw-shadow-color), inset 0 -1px 1px -0.5px var(--tw-shadow-color);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+.box-shadow-ln {
+  --tw-shadow:
+    0 1px 1px 0.5px rgba(51, 51, 51, 0.04), 0 3px 3px -1.5px rgba(
+      51,
+      51,
+      51,
+      0.02
+    ), 0 6px 6px -3px rgba(51, 51, 51, 0.04), 0 12px 12px -6px rgba(
+      51,
+      51,
+      51,
+      0.04
+    ), 0 24px 24px -12px rgba(51, 51, 51, 0.04), 0 48px 48px -24px rgba(
+      51,
+      51,
+      51,
+      0.04
+    ), 0 0 0 1px rgba(51, 51, 51, 0.1), inset 0 -1px 1px -0.5px rgba(
+      51,
+      51,
+      51,
+      0.06
+    );
+  --tw-shadow-colored:
+    0 1px 1px 0.5px var(--tw-shadow-color), 0 3px 3px -1.5px var(
+      --tw-shadow-color
+    ), 0 6px 6px -3px var(--tw-shadow-color), 0 12px 12px -6px var(
+      --tw-shadow-color
+    ), 0 24px 24px -12px var(--tw-shadow-color), 0 48px 48px -24px var(
+      --tw-shadow-color
+    ), 0 0 0 1px var(--tw-shadow-color), inset 0 -1px 1px -0.5px var(
+      --tw-shadow-color
+    );
+  box-shadow:
+    var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000),
+    var(--tw-shadow);
 }
 
-.data-pressed\:bg-accent[data-pressed]{
+.data-pressed\:bg-accent[data-pressed] {
   background-color: transparent;
-  --tw-shadow: 0 1px 1px .5px #3333330a, 0 3px 3px -1.5px #33333305, 0 6px 6px -3px #3333330a, 0 12px 12px -6px #3333330a, 0 24px 24px -12px #3333330a, 0 48px 48px -24px #3333330a, 0 0 0 1px #3333331a, inset 0 -1px 1px -.5px #3333330f;
-  --tw-shadow-colored: 0 1px 1px .5px var(--tw-shadow-color), 0 3px 3px -1.5px var(--tw-shadow-color), 0 6px 6px -3px var(--tw-shadow-color), 0 12px 12px -6px var(--tw-shadow-color), 0 24px 24px -12px var(--tw-shadow-color), 0 48px 48px -24px var(--tw-shadow-color), 0 0 0 1px var(--tw-shadow-color), inset 0 -1px 1px -.5px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  --tw-shadow:
+    0 1px 1px 0.5px #3333330a, 0 3px 3px -1.5px #33333305, 0 6px 6px -3px #3333330a, 0 12px 12px -6px #3333330a, 0 24px 24px -12px #3333330a, 0 48px 48px -24px #3333330a, 0 0 0 1px #3333331a, inset 0 -1px 1px -0.5px #3333330f;
+  --tw-shadow-colored:
+    0 1px 1px 0.5px var(--tw-shadow-color), 0 3px 3px -1.5px var(
+      --tw-shadow-color
+    ), 0 6px 6px -3px var(--tw-shadow-color), 0 12px 12px -6px var(
+      --tw-shadow-color
+    ), 0 24px 24px -12px var(--tw-shadow-color), 0 48px 48px -24px var(
+      --tw-shadow-color
+    ), 0 0 0 1px var(--tw-shadow-color), inset 0 -1px 1px -0.5px var(
+      --tw-shadow-color
+    );
+  box-shadow:
+    var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000),
+    var(--tw-shadow);
   color: var(--color-base-content);
 }
-
 
 .html-tabs button[data-slot] {
   background-color: transparent;
@@ -190,7 +227,7 @@ body, html {
 
 .cozy-layout {
   /* Soft warm cream background with dot pattern */
-  background-color: #F6EFED;
+  background-color: #f6efed;
   background-image: radial-gradient(circle, #e0d5d2 1px, transparent 1px);
   background-size: 20px 20px;
   min-height: 100vh;
@@ -198,8 +235,8 @@ body, html {
 
 /* Cozy Sidebar Group - scoped to HTML layout */
 [data-slot="sidebar-group-label"] {
-  color: #957C84 !important;
-  font-family: 'Fredoka', sans-serif !important;
+  color: #957c84 !important;
+  font-family: "Fredoka", sans-serif !important;
   font-size: 1em;
   line-height: 1.5;
   font-weight: 500;
@@ -212,7 +249,6 @@ body, html {
 }
 
 .cozy-layout [data-slot="sidebar-menu-button"][data-active="true"] {
-
   background-image: none !important;
   color: #767676 !important;
   border-radius: 9999px;
@@ -223,7 +259,7 @@ body, html {
   margin-left: auto;
   font-size: 2.2em;
   opacity: 0.8;
-  color:#947DB6;
+  color: #947db6;
 }
 
 /* Cozy Sidebar */
@@ -324,7 +360,7 @@ body, html {
   border-radius: 1.5rem;
   padding: 2rem;
   margin: 1rem;
-  box-shadow: 
+  box-shadow:
     0 4px 6px -1px oklch(70% 0.02 300 / 10%),
     0 2px 4px -2px oklch(70% 0.02 300 / 10%);
 }
@@ -335,14 +371,14 @@ body, html {
   border: 1px solid oklch(92% 0.015 320);
   border-radius: 1.25rem;
   padding: 1.5rem;
-  box-shadow: 
+  box-shadow:
     0 1px 3px oklch(70% 0.02 300 / 8%),
     0 1px 2px oklch(70% 0.02 300 / 12%);
   transition: all 0.2s ease;
 }
 
 .cozy-card:hover {
-  box-shadow: 
+  box-shadow:
     0 4px 12px oklch(70% 0.02 300 / 15%),
     0 2px 4px oklch(70% 0.02 300 / 10%);
   transform: translateY(-2px);
@@ -390,4 +426,10 @@ body, html {
 .cozy-subtitle {
   color: oklch(55% 0.03 300);
   font-weight: 400;
+}
+
+.cozy-layout *,
+.cozy-layout ::before,
+.cozy-layout ::after {
+  border-color: var(--color-border);
 }
