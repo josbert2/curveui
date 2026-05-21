@@ -1,0 +1,557 @@
+{
+  "data": [
+    {
+      "%": 51,
+      "brotli": 0.492,
+      "file": "base/svg.css",
+      "raw": 1.007,
+      "selector": 3,
+      "var": 3
+    },
+    {
+      "%": 10,
+      "brotli": 0.111,
+      "file": "base/scrollbar.css",
+      "raw": 0.123,
+      "selector": 1,
+      "var": 0
+    },
+    {
+      "%": 61,
+      "brotli": 0.552,
+      "file": "base/reset.css",
+      "raw": 1.402,
+      "selector": 18,
+      "var": 1
+    },
+    {
+      "%": 13,
+      "brotli": 0.138,
+      "file": "base/rootcolor.css",
+      "raw": 0.158,
+      "selector": 1,
+      "var": 3
+    },
+    {
+      "%": 13,
+      "brotli": 0.121,
+      "file": "base/properties.css",
+      "raw": 0.139,
+      "selector": 1,
+      "var": 1
+    },
+    {
+      "%": 18,
+      "brotli": 0.097,
+      "file": "base/custombase.css",
+      "raw": 0.119,
+      "selector": 1,
+      "var": 0
+    },
+    {
+      "%": 96,
+      "brotli": 1.256,
+      "file": "components/textarea.css",
+      "raw": 31.472,
+      "selector": 204,
+      "var": 468
+    },
+    {
+      "%": 71,
+      "brotli": 0.158,
+      "file": "components/collapse.css",
+      "raw": 0.554,
+      "selector": 6,
+      "var": 0
+    },
+    {
+      "%": 91,
+      "brotli": 0.325,
+      "file": "components/footer.css",
+      "raw": 3.47,
+      "selector": 36,
+      "var": 42
+    },
+    {
+      "%": 93,
+      "brotli": 1.039,
+      "file": "components/modal.css",
+      "raw": 14.546,
+      "selector": 126,
+      "var": 180
+    },
+    {
+      "%": 96,
+      "brotli": 1.577,
+      "file": "components/validation.css",
+      "raw": 35.192,
+      "selector": 210,
+      "var": 396
+    },
+    {
+      "%": 74,
+      "brotli": 0.76,
+      "file": "components/mockup.css",
+      "raw": 2.894,
+      "selector": 12,
+      "var": 13
+    },
+    {
+      "%": 96,
+      "brotli": 1.427,
+      "file": "components/menu.css",
+      "raw": 33.368,
+      "selector": 162,
+      "var": 456
+    },
+    {
+      "%": 93,
+      "brotli": 0.402,
+      "file": "components/customOptions.css",
+      "raw": 5.966,
+      "selector": 24,
+      "var": 126
+    },
+    {
+      "%": 95,
+      "brotli": 0.965,
+      "file": "components/dropdown.css",
+      "raw": 17.84,
+      "selector": 48,
+      "var": 282
+    },
+    {
+      "%": 93,
+      "brotli": 0.929,
+      "file": "components/diff.css",
+      "raw": 13.526,
+      "selector": 54,
+      "var": 180
+    },
+    {
+      "%": 55,
+      "brotli": 0.323,
+      "file": "components/skeleton.css",
+      "raw": 0.71,
+      "selector": 5,
+      "var": 7
+    },
+    {
+      "%": 96,
+      "brotli": 1.14,
+      "file": "components/range.css",
+      "raw": 26.756,
+      "selector": 150,
+      "var": 642
+    },
+    {
+      "%": 96,
+      "brotli": 1.368,
+      "file": "components/tab.css",
+      "raw": 30.56,
+      "selector": 138,
+      "var": 642
+    },
+    {
+      "%": 92,
+      "brotli": 0.622,
+      "file": "components/status.css",
+      "raw": 7.508,
+      "selector": 78,
+      "var": 108
+    },
+    {
+      "%": 95,
+      "brotli": 0.638,
+      "file": "components/fileinput.css",
+      "raw": 11.762,
+      "selector": 66,
+      "var": 258
+    },
+    {
+      "%": 93,
+      "brotli": 0.519,
+      "file": "components/radialprogress.css",
+      "raw": 7.49,
+      "selector": 12,
+      "var": 144
+    },
+    {
+      "%": 96,
+      "brotli": 1.213,
+      "file": "components/timeline.css",
+      "raw": 31.73,
+      "selector": 228,
+      "var": 318
+    },
+    {
+      "%": 96,
+      "brotli": 1.409,
+      "file": "components/input.css",
+      "raw": 37.832,
+      "selector": 174,
+      "var": 672
+    },
+    {
+      "%": 97,
+      "brotli": 1.191,
+      "file": "components/advanceSelect.css",
+      "raw": 41.33,
+      "selector": 84,
+      "var": 1026
+    },
+    {
+      "%": 96,
+      "brotli": 0.889,
+      "file": "components/drawer.css",
+      "raw": 21.548,
+      "selector": 60,
+      "var": 552
+    },
+    {
+      "%": 95,
+      "brotli": 1.222,
+      "file": "components/switches.css",
+      "raw": 23.576,
+      "selector": 126,
+      "var": 438
+    },
+    {
+      "%": 85,
+      "brotli": 0.292,
+      "file": "components/navbar.css",
+      "raw": 1.988,
+      "selector": 24,
+      "var": 6
+    },
+    {
+      "%": 96,
+      "brotli": 1.279,
+      "file": "components/card.css",
+      "raw": 29.054,
+      "selector": 180,
+      "var": 498
+    },
+    {
+      "%": 93,
+      "brotli": 0.552,
+      "file": "components/alert.css",
+      "raw": 7.55,
+      "selector": 42,
+      "var": 228
+    },
+    {
+      "%": 77,
+      "brotli": 1.343,
+      "file": "components/loading.css",
+      "raw": 5.773,
+      "selector": 15,
+      "var": 6
+    },
+    {
+      "%": 95,
+      "brotli": 0.741,
+      "file": "components/pinInput.css",
+      "raw": 16.226,
+      "selector": 60,
+      "var": 390
+    },
+    {
+      "%": 93,
+      "brotli": 0.349,
+      "file": "components/label.css",
+      "raw": 5.042,
+      "selector": 24,
+      "var": 96
+    },
+    {
+      "%": 94,
+      "brotli": 0.731,
+      "file": "components/tooltip.css",
+      "raw": 11.372,
+      "selector": 60,
+      "var": 324
+    },
+    {
+      "%": 96,
+      "brotli": 2.05,
+      "file": "components/button.css",
+      "raw": 46.946,
+      "selector": 264,
+      "var": 1350
+    },
+    {
+      "%": 94,
+      "brotli": 1.062,
+      "file": "components/checkbox.css",
+      "raw": 17.534,
+      "selector": 114,
+      "var": 336
+    },
+    {
+      "%": 94,
+      "brotli": 0.8,
+      "file": "components/badge.css",
+      "raw": 14.492,
+      "selector": 84,
+      "var": 498
+    },
+    {
+      "%": 96,
+      "brotli": 0.938,
+      "file": "components/avatar.css",
+      "raw": 24.932,
+      "selector": 78,
+      "var": 378
+    },
+    {
+      "%": 96,
+      "brotli": 1.45,
+      "file": "components/select.css",
+      "raw": 35.24,
+      "selector": 144,
+      "var": 600
+    },
+    {
+      "%": 92,
+      "brotli": 0.476,
+      "file": "components/breadcrumbs.css",
+      "raw": 5.972,
+      "selector": 48,
+      "var": 42
+    },
+    {
+      "%": 91,
+      "brotli": 0.484,
+      "file": "components/indicator.css",
+      "raw": 5.654,
+      "selector": 42,
+      "var": 168
+    },
+    {
+      "%": 91,
+      "brotli": 0.652,
+      "file": "components/carousel.css",
+      "raw": 7.322,
+      "selector": 54,
+      "var": 72
+    },
+    {
+      "%": 96,
+      "brotli": 0.872,
+      "file": "components/stack.css",
+      "raw": 23.786,
+      "selector": 138,
+      "var": 288
+    },
+    {
+      "%": 93,
+      "brotli": 0.782,
+      "file": "components/divider.css",
+      "raw": 11.168,
+      "selector": 90,
+      "var": 126
+    },
+    {
+      "%": 95,
+      "brotli": 0.847,
+      "file": "components/stat.css",
+      "raw": 17.834,
+      "selector": 60,
+      "var": 294
+    },
+    {
+      "%": 55,
+      "brotli": 0.3,
+      "file": "components/filter.css",
+      "raw": 0.669,
+      "selector": 5,
+      "var": 0
+    },
+    {
+      "%": 69,
+      "brotli": 0.418,
+      "file": "components/swap.css",
+      "raw": 1.335,
+      "selector": 13,
+      "var": 0
+    },
+    {
+      "%": 78,
+      "brotli": 1.256,
+      "file": "components/mask.css",
+      "raw": 5.672,
+      "selector": 22,
+      "var": 0
+    },
+    {
+      "%": 95,
+      "brotli": 0.683,
+      "file": "components/chat.css",
+      "raw": 12.962,
+      "selector": 72,
+      "var": 66
+    },
+    {
+      "%": 93,
+      "brotli": 0.508,
+      "file": "components/kbd.css",
+      "raw": 7.082,
+      "selector": 36,
+      "var": 204
+    },
+    {
+      "%": 96,
+      "brotli": 0.896,
+      "file": "components/table.css",
+      "raw": 20.996,
+      "selector": 180,
+      "var": 318
+    },
+    {
+      "%": 94,
+      "brotli": 1.156,
+      "file": "components/progress.css",
+      "raw": 19.471,
+      "selector": 100,
+      "var": 318
+    },
+    {
+      "%": 95,
+      "brotli": 0.709,
+      "file": "components/accordion.css",
+      "raw": 13.094,
+      "selector": 42,
+      "var": 252
+    },
+    {
+      "%": 93,
+      "brotli": 0.818,
+      "file": "components/link.css",
+      "raw": 12.5,
+      "selector": 96,
+      "var": 270
+    },
+    {
+      "%": 94,
+      "brotli": 1.002,
+      "file": "components/radio.css",
+      "raw": 15.436,
+      "selector": 118,
+      "var": 294
+    },
+    {
+      "%": 54,
+      "brotli": 0.25,
+      "file": "utilities/glass.css",
+      "raw": 0.543,
+      "selector": 1,
+      "var": 6
+    },
+    {
+      "%": 97,
+      "brotli": 0.608,
+      "file": "utilities/join.css",
+      "raw": 20.156,
+      "selector": 138,
+      "var": 852
+    },
+    {
+      "%": 74,
+      "brotli": 0.402,
+      "file": "utilities/typography.css",
+      "raw": 1.524,
+      "selector": 5,
+      "var": 39
+    },
+    {
+      "%": 95,
+      "brotli": 1.061,
+      "file": "utilities/colors.css",
+      "raw": 23.558,
+      "selector": 192,
+      "var": 558
+    },
+    {
+      "%": 95,
+      "brotli": 0.713,
+      "file": "utilities/radius.css",
+      "raw": 14.078,
+      "selector": 162,
+      "var": 234
+    },
+    {
+      "%": 95,
+      "brotli": 0.872,
+      "file": "colors/responsive-extended.css",
+      "raw": 18.63,
+      "selector": 300,
+      "var": 300
+    },
+    {
+      "%": 92,
+      "brotli": 0.469,
+      "file": "colors/states.css",
+      "raw": 5.884,
+      "selector": 60,
+      "var": 60
+    },
+    {
+      "%": 95,
+      "brotli": 0.958,
+      "file": "colors/responsive.css",
+      "raw": 17.615,
+      "selector": 300,
+      "var": 300
+    },
+    {
+      "%": 92,
+      "brotli": 0.72,
+      "file": "colors/states-extended.css",
+      "raw": 9.268,
+      "selector": 120,
+      "var": 120
+    },
+    {
+      "%": 95,
+      "brotli": 1.148,
+      "file": "colors/properties-extended.css",
+      "raw": 22.764,
+      "selector": 160,
+      "var": 760
+    },
+    {
+      "%": 96,
+      "brotli": 2.038,
+      "file": "colors/properties.css",
+      "raw": 49.9,
+      "selector": 600,
+      "var": 600
+    },
+    {
+      "%": 85,
+      "brotli": 0.366,
+      "file": "chunks.css",
+      "raw": 2.456,
+      "selector": 68,
+      "var": 0
+    },
+    {
+      "%": 86,
+      "brotli": 2.569,
+      "file": "themes.css",
+      "raw": 18.54,
+      "selector": 17,
+      "var": 476
+    },
+    {
+      "%": 97,
+      "brotli": 31.323,
+      "file": "flyonui.css",
+      "raw": 931.698,
+      "selector": 5693,
+      "var": 17085
+    }
+  ],
+  "timestamp": "2026-05-10T12-43-29.788Z"
+}
