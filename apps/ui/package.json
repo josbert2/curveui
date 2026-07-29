@@ -42,7 +42,7 @@
   "scripts": {
     "build": "next build",
     "clean": "rm -rf node_modules && rm -rf .turbo && rm -rf .next && rm -rf .source",
-    "dev": "next dev --port 4000",
+    "dev": "next dev --port 5000",
     "format": "biome format --write .",
     "format:all": "biome check --write --unsafe --no-errors-on-unmatched",
     "lint": "biome lint .",

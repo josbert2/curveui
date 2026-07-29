@@ -61,7 +61,7 @@
     "build": "bun run --bun format:write && next build",
     "check-types": "tsc --noEmit",
     "clean": "rm -rf node_modules && rm -rf .turbo && rm -rf .next",
-    "dev": "next dev --port 4001",
+    "dev": "next dev --port 5001",
     "format:check": "biome format --check .",
     "format:write": "biome format --write .",
     "lint": "biome lint .",
